@@ -1,5 +1,4 @@
 import Root from "./Root";
-import "./App.scss";
 
 function App() {
   return (

@@ -11,11 +11,12 @@ const WeatherInput = () => {
 
   const submitHandler = async (): Promise<void> => {
     setError(false);
-    if(selected.length !== 0) {
-      for(let w in selected) {
+    removeHandler();
+    if (selected.length !== 0) {
+      for (let w in selected) {
         const lat = selected[w].lat;
         const lng = selected[w].lng;
-        await WeatherStore.getWeather(lat, lng)
+        await WeatherStore.getWeather(lat, lng);
       }
 
       return;
@@ -24,7 +25,11 @@ const WeatherInput = () => {
     setError(true);
     return;
   };
-  
+
+  const removeHandler = () => {
+    WeatherStore.removeAllWeatherInfo();
+  };
+
   return (
     <div>
       {error && <span>You have to fill this field</span>}
@@ -38,7 +43,10 @@ const WeatherInput = () => {
         multiple
         selected={selected}
       />
-      <Button className="mt-2" onClick={submitHandler}>Check forecast</Button>
+      <Button className="mt-2" onClick={submitHandler}>
+        Check forecast
+      </Button>
+      <Button className="mt-2 ms-2" variant="danger" onClick={removeHandler}>Remove all</Button>
     </div>
   );
 };
