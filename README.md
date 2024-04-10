@@ -1,7 +1,8 @@
 
 ## Authors
 
-- [@Erykov9](https://www.github.com/Erykov9)
+- [Linkedin](https://www.linkedin.com/in/eryk-szczepanek)
+- [Github](https://www.github.com/Erykov9)
 
 ## Website
 
