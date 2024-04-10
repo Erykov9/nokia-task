@@ -25,7 +25,7 @@ type Coord = {
 
 type Main = {
   feels_like: number;
-  himidity: number;
+  humidity: number;
   pressure: number;
   temp: number;
   temp_max: number;

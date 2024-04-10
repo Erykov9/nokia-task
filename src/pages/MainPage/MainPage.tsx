@@ -1,9 +1,11 @@
 import WeatherComponent from '../../components/WeatherComponent/WeatherComponent';
-
+import { Route, Routes } from 'react-router';
 const MainPage = () => {
   return (
     <div>
-      <WeatherComponent/>
+      <Routes>
+        <Route path="/" element={<WeatherComponent/>}/>
+      </Routes>
     </div>
   )
 };

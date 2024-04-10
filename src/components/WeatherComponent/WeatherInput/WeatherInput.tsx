@@ -1,9 +1,9 @@
-import cities from "../../../vendor/cities.json";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Typeahead } from "react-bootstrap-typeahead";
 import WeatherStore from "../../../mobx/WeatherStore";
 import "react-bootstrap-typeahead/css/Typeahead.css";
+import cities from "cities.json";
 
 const WeatherInput = () => {
   const [selected, setSelected] = useState<City[]>([]);
@@ -12,6 +12,7 @@ const WeatherInput = () => {
   const submitHandler = async (): Promise<void> => {
     setError(false);
     removeHandler();
+    
     if (selected.length !== 0) {
       for (let w in selected) {
         const lat = selected[w].lat;
@@ -35,7 +36,7 @@ const WeatherInput = () => {
       {error && <span>You have to fill this field</span>}
       <Typeahead
         id="cities"
-        labelKey="city"
+        labelKey="name"
         options={cities}
         onChange={(s: any) => {
           setSelected(s);

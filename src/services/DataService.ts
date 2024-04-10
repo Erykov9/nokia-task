@@ -12,6 +12,15 @@ class DataService {
     }
   };
 
+  async getWeatherByCityName(city: string) {
+    try {
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.API_KEY}`);
+      return response;
+    } catch(error) {
+      throw new Error("Forecast fetch failed" + error)
+    }
+  };
+
 };
 
 export default new DataService();
