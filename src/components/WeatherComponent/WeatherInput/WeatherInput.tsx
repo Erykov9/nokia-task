@@ -12,7 +12,7 @@ const WeatherInput = () => {
   const submitHandler = async (): Promise<void> => {
     setError(false);
     removeHandler();
-    
+
     if (selected.length !== 0) {
       for (let w in selected) {
         const lat = selected[w].lat;
@@ -29,6 +29,7 @@ const WeatherInput = () => {
 
   const removeHandler = () => {
     WeatherStore.removeAllWeatherInfo();
+    setSelected([]);
   };
 
   return (
@@ -38,8 +39,8 @@ const WeatherInput = () => {
         id="cities"
         labelKey="name"
         options={cities}
-        onChange={(s: any) => {
-          setSelected(s);
+        onChange={(s) => {
+          setSelected(s as City[]);
         }}
         multiple
         selected={selected}
