@@ -1,13 +1,17 @@
+import NavigationComponent from "./components/NavigationComponent/NavigationComponent";
 import MainPage from "./pages/MainPage/MainPage";
 import { Container } from "react-bootstrap";
 
 const Root = () => {
   return (
-    <Container>
-      <div>
-        <MainPage />
-      </div>
-    </Container>
+    <>
+      <NavigationComponent/>
+      <Container>
+        <div>
+          <MainPage />
+        </div>
+      </Container>
+    </>
   );
 };
 

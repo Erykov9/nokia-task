@@ -1,8 +1,10 @@
-import React from 'react'
+import WeatherComponent from '../../components/WeatherComponent/WeatherComponent';
 
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <div>
+      <WeatherComponent/>
+    </div>
   )
 };
 
